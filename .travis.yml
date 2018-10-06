@@ -10,7 +10,7 @@ android:
 licenses:
 - android-sdk-license-.+
 script:
-- "./gradlew build connectedCheck"
+- ./gradlew build connectedCheck
 before_install:
 - openssl aes-256-cbc -K $encrypted_bae631df5228_key -iv $encrypted_bae631df5228_iv
   -in store.keystore.enc -out store.keystore -d
