@@ -39,7 +39,7 @@ android {
         signingConfigs.release.storeFile = file("../store.keystore")
         signingConfigs.release.storePassword = System.getenv("keystore_password")
         signingConfigs.release.keyAlias = System.getenv("keystore_alias")
-        signingConfigs.release.keyPassword = System.getenv("keystore_alias_password")
+        signingConfigs.release.keyPassword = System.getenv("keytore_alias_password")
     }
 
     lintOptions {
