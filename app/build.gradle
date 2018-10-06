@@ -14,7 +14,12 @@ android {
     }
 
     signingConfigs {
-        release
+        release {
+            storeFile file("store.keystore")
+            storePassword System.getenv("keystore_password")
+            keyAlias System.getenv("keystore_alias")
+            keyPassword System.getenv("keystore_alias_password")
+        }
     }
 
     buildTypes {
@@ -30,15 +35,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             resValue "string", "app_name", "Camera Roll (debug)"
         }
-    }
-
-    def isRunningOnTravis = System.getenv("CI") == "true"
-
-    if (isRunningOnTravis) {
-        signingConfigs.release.storeFile = file("../store.keystore")
-        signingConfigs.release.storePassword = System.getenv("keystore_password")
-        signingConfigs.release.keyAlias = System.getenv("keystore_alias")
-        signingConfigs.release.keyPassword = System.getenv("keystore_alias_password")
     }
 
     lintOptions {
