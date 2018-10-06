@@ -16,6 +16,7 @@ before_install:
     -in store.keystore.enc -out store.keystore -d
   - yes | sdkmanager "platforms;android-27"
   - ls #debug
+  - chmod +x gradlew
 before_deploy:
   - cp app/build/outputs/apk/release/*.apk cameraroll-$TRAVIS_BUILD_NUMBER.apk
 deploy:
