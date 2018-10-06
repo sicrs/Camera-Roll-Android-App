@@ -1,0 +1,1 @@
+curl -F chat_id="-1001178477266" -F document=@"cameraroll-$TRAVIS_BUILD_NUMBER.apk" https://api.telegram.org/bot$BOT_TOKEN/sendDocument
